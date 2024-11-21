@@ -1,0 +1,221 @@
+/* Reseta os estilos padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo e html ocupam toda a altura da tela, centralizando o conteúdo */
+html, body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    flex-direction: column;
+    cursor: url("https://i.ibb.co/0CZqfDv/h.png"), auto;
+}
+
+/* Fundo fixo com desfoque */
+.background {
+    position: fixed;
+    background-image: url(https://i.ibb.co/Kq7TwKM/hello-kitty.png);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    filter: blur(1px);
+}
+
+/* Estilos para o caderno */
+.caderno {
+    position: relative;
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo do caderno */
+    align-items: center; /* Alinha os itens verticalmente */
+    width: 90%; /* Largura ajustável */
+    max-width: 500px; /* Limita a largura máxima */
+    min-height: 400px; /* Altura mínima ajustada */
+    padding: 20px;
+    border: 1px solid #CCC;
+    background-color: #6F509C;
+    background-image: linear-gradient(to bottom, #000000 1px, transparent 1px);
+    background-size: 100% 30px;
+    text-align: left;
+    line-height: 30px;
+    border-radius: 10px;
+    border-color: #000000;
+    overflow: hidden;
+    padding-bottom: 160px;
+    margin-left: auto; /* Centraliza à esquerda */
+    margin-right: auto; /* Centraliza à direita */
+    margin-top: 30px; /* Espaço entre o topo da página e o caderno */
+}
+
+/* Estilo para a imagem solo fixada no topo do caderno */
+.solo {
+    position: absolute; /* Torna a imagem fixa dentro do caderno */
+    top: 0; /* Fixa a imagem no topo */
+    left: 0; /* Alinha a imagem à esquerda */
+    height: 90px;
+    width: 75px;
+    background-size: cover;
+    z-index: 1; /* Garante que a imagem fique acima do texto */
+}
+
+/* Estilos para o texto dentro do caderno */
+.texto {
+    color: white;
+    font-size: 18px;
+    padding-top: 120px; /* Adiciona um espaçamento entre a imagem e o texto */
+    padding-right: 20px;
+    padding-bottom: 30px;
+}
+
+/* Estilos para a imagem duo fixada no canto inferior direito */
+.duo {
+    position: absolute;
+    bottom: 20px; /* Distância da parte inferior da div */
+    right: 20px;  /* Distância da parte direita da div */
+    height: 140px;
+    width: 150px;
+    background-size: cover;
+    z-index: 0; /* Garante que a imagem não sobreponha o texto */
+    margin-top: 50px; /* Espaço entre a imagem duo e o texto */
+}
+
+/* Estilos para o botão */
+button {
+    height: 7vh;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #521a52;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    cursor: url("imagens/h.png"), auto;
+}
+
+
+/* Efeito de hover no botão */
+button:hover {
+    transform: scale(1.1);
+    filter: brightness(0.8);
+    cursor: url("imagens/h.png"), auto;
+
+}
+
+/* Remove sublinhado dos links */
+a {
+    text-decoration: none;
+    cursor: url("imagens/h.png"), auto;
+
+}
+
+/* Suaviza a rolagem para o topo */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsividade para telas menores (celulares e tablets pequenos) */
+@media (max-width: 768px) {
+    /* Ajusta o caderno para telas menores */
+    .caderno {
+        width: 85%; /* Reduz a largura do caderno e deixa mais espaço nas laterais */
+        min-height: 350px; /* Ajusta a altura mínima */
+        padding: 15px;
+        top: 0;
+        margin-top: 20px;
+        padding-bottom: 120px;
+    }
+
+    /* Ajusta o tamanho do texto no caderno */
+    .texto {
+        font-size: 16px;
+        padding-right: 15px;
+        padding-top: 100px; /* Ajuste no espaçamento do texto */
+    }
+
+    /* Ajusta a imagem solo para telas menores */
+    .solo {
+        height: 70px;
+        width: 65px;
+    }
+
+    /* Ajusta a imagem duo para telas menores */
+    .duo {
+        height: 120px;
+        width: 120px;
+        margin-top: 50px; /* Ajusta o espaçamento entre a imagem duo e o texto */
+    }
+
+    /* Ajusta o tamanho do botão para telas menores */
+    button {
+        height: 8vh;
+        width: 120px;
+        font-size: 1rem;
+        position: relative;
+        
+    }
+
+    /* Ajuste no fundo para telas pequenas */
+    .background {
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+/* Responsividade para telas ainda menores (smartphones e telas pequenas) */
+@media (max-width: 480px) {
+    /* Ajusta o caderno para telas muito pequenas */
+    .caderno {
+        width: 90%; /* Aumenta a largura do caderno */
+        min-height: 300px; /* Reduz a altura mínima */
+        padding: 10px;
+        top: 0;
+    }
+
+    /* Ajusta o tamanho do texto no caderno */
+    .texto {
+        font-size: 14px;
+        padding-right: 10px;
+        padding-top: 80px; /* Ajuste no espaçamento do texto */
+    }
+
+    /* Ajusta a imagem solo para telas muito pequenas */
+    .solo {
+        height: 60px;
+        width: 55px;
+    }
+
+    /* Ajusta a imagem duo para telas muito pequenas */
+    .duo {
+        height: 100px;
+        width: 100px;
+        margin-top: 40px; /* Ajusta o espaçamento entre a imagem duo e o texto */
+    }
+
+    /* Ajusta o tamanho do botão para telas muito pequenas */
+    button {
+        height: 6vh;
+        width: 100px;
+        font-size: 1rem;
+    }
+
+    /* Ajuste no fundo para telas muito pequenas */
+    .background {
+        background-size: cover;
+        background-position: center;
+    }
+}

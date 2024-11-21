@@ -1,0 +1,188 @@
+/* Reseta os estilos padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo e html ocupam toda a altura da tela, centralizando o conteúdo */
+html, body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-family: 'Press Start 2P', cursive;
+    cursor: url("https://i.ibb.co/yPGfSTQ/icons8-microsystem-48.png"),auto;
+}
+
+/* Fundo fixo com desfoque */
+.background {
+    position: fixed;
+    background: linear-gradient(black, gray,gray,gray,black);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    filter: blur(2px);
+    cursor: url("https://i.ibb.co/yPGfSTQ/icons8-microsystem-48.png"),auto;
+
+}
+
+/* Container principal */
+.main-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas de largura igual */
+    gap: 20px;
+    justify-items: center;
+    padding: 40px;
+    width: 100%;
+    max-width: 1200px;
+    cursor: url("https://i.ibb.co/yPGfSTQ/icons8-microsystem-48.png"),auto;
+}
+
+/* Container individual */
+.container {
+    background-color: #1a1919;
+    height: 500px;
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 80px;
+    cursor: url("https://i.ibb.co/yPGfSTQ/icons8-microsystem-48.png"),auto;
+}
+
+/* Efeito de hover no container */
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos das imagens nos containers */
+.imagem,
+.imagem2,
+.imagem3 {
+    height: 300px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Imagens específicas */
+.imagem {
+    background-image: url(https://i.ibb.co/YLytXJ4/Die-with-a-Smile-Lady-Gaga-Bruno-Mars.jpg);
+}
+
+.imagem2 {
+    background-image: url(https://i.ibb.co/B6hH0ZF/aindabem.jpg);
+}
+
+.imagem3 {
+    background-image: url(https://i.ibb.co/SN7xKz3/quase-uma-semana.jpg);
+}
+
+/* Estilos de texto dentro do container */
+.text,
+.text2,
+.text3 {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px black;
+}
+
+/* Estilos do controle de áudio */
+audio.controle {
+    width: 100%;
+    margin-top: 10px;
+    outline: none;
+}
+
+/* Estilos dos links */
+a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+/* Estilo do hover nos links */
+a:hover {
+    color: #A8050D;
+    text-decoration: underline;
+}
+
+/* Responsividade para telas pequenas (tablets e celulares) */
+@media (max-width: 1024px) {
+    .main-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas menores */
+        padding: 20px;
+    }
+
+    .container {
+        width: 100%; /* Largura total da tela */
+        max-width: none; /* Remove a largura máxima */
+    }
+}
+
+/* Responsividade para telas ainda menores (smartphones) */
+@media (max-width: 768px) {
+    .main-container {
+        grid-template-columns: 1fr; /* 1 item por linha */
+        padding: 20px;
+        gap: 10px;
+    }
+
+    .container {
+        width: 90%; /* Ajusta a largura para 90% da tela */
+        margin-top: 20px;
+    }
+}
+
+/* Responsividade para telas muito pequenas (smartphones ultra pequenos) */
+@media (max-width: 480px) {
+    .main-container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .container {
+        width: 90%; /* Ajusta a largura para 90% da tela */
+    }
+}
+
+/* Estilo do botão */
+button {
+    height: 40px;
+    width: 150px;
+    margin-bottom: 20px;
+    background-color: purple;
+    color: white;
+    border-radius: 20px;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+/* Efeito de hover no botão */
+button:hover {
+    transform: scale(1.1);
+    filter: brightness(0.8);
+}

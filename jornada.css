@@ -1,0 +1,132 @@
+/* Configurações gerais */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden; /* Remove a barra de rolagem horizontal */
+    overflow-y: auto; /* Permite apenas rolagem vertical */
+    cursor: url("./imagens/icons8-pincel-48.png"), auto;
+}
+
+/* Imagem de fundo */
+.background {
+    background-image: url(https://i.ibb.co/48Wg13b/vangogh.png);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(2px);
+    z-index: -1;
+    cursor: url("./imagens/icons8-pincel-48.png"), auto;
+}
+
+/* Container das fotos */
+.fotos-container {
+    display: grid; /* Usando grid para o layout */
+    grid-template-columns: repeat(3, 1fr); /* Sempre mantém 3 colunas */
+    gap: 20px; /* Espaçamento entre as fotos */
+    padding: 20px; /* Espaço interno nos quatro lados */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    max-width: 1200px; /* Limita a largura total do container */
+    box-sizing: border-box; /* Inclui padding no cálculo do tamanho */
+}
+
+/* Estilo das fotos */
+.fotos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.moldura {
+    border: 5px solid rgb(255, 255, 255); /* Bordas mais grossas */
+    border-radius: 10px; /* Bordas arredondadas */
+    overflow: hidden; /* Impede que a imagem ultrapasse os limites */
+    width: 100%; /* A moldura ocupa 100% do espaço da coluna */
+    aspect-ratio: 1 / 1; /* Garante que as molduras sejam quadradas */
+}
+
+/* Imagens dentro da moldura */
+.moldura img {
+    width: 100%; /* A imagem ocupa 100% da largura da moldura */
+    height: 100%; /* A imagem ocupa 100% da altura da moldura */
+    object-fit: cover; /* A imagem cobre totalmente a moldura, mantendo as proporções */
+}
+
+/* Botão */
+button {
+    position: relative;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 7vh;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2d0738;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    z-index: 10;
+    cursor: url("./imagens/icons8-pincel-48.png"), auto;
+}
+
+button:hover{
+
+filter: brightness(0.8);
+
+cursor: url("./imagens/icons8-pincel-48.png"), auto;
+}
+
+/* Links sem sublinhado */
+a {
+    text-decoration: none;
+    cursor: url("./imagens/icons8-pincel-48.png"), auto;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .fotos-container {
+        grid-template-columns: repeat(3, 1fr); /* Mantém 3 colunas */
+        gap: 10px; /* Reduz o espaçamento entre as fotos */
+    }
+
+    .moldura {
+        border: 3px solid rgb(255, 255, 255); /* Bordas mais finas */
+    }
+
+    button {
+        height: 5vh; /* Botão menor */
+        width: 80px;
+        cursor: url("./imagens/icons8-pincel-48.png"), auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .fotos-container {
+        grid-template-columns: repeat(3, 1fr); /* Mantém 3 colunas */
+        gap: 5px; /* Espaçamento ainda menor */
+    }
+
+    .moldura {
+        border: 2px solid rgb(255, 255, 255); /* Bordas ainda mais finas */
+    }
+
+    button {
+        height: 4vh; /* Botão menor */
+        width: 70px;
+        cursor: url("./imagens/icons8-pincel-48.png"), auto;
+    }
+}
